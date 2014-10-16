@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:k="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core">
+<body>
+
+		<h:form id="addsubcomment" rendered="#{loginBean.loggedIn}">
+			<div class="addComment">
+				<h:outputText value="#{c.commentcount} subcomments for #{c.comment} by #{c.user}"></h:outputText><br/>
+				<h:inputTextarea id="subcomment" value="#{commentBean.comment}" k:placeholder="hey #{loginBean.username} write a subcomment here" style="width: 700px"></h:inputTextarea><br/>
+				<h:commandButton value="post subcomment" style="width: 130px">
+					<f:ajax event="click" execute="subcomment" listener="#{c.addComment(commentBean.comment,loginBean.username)}" render=":outerloop:comments"></f:ajax>	
+				</h:commandButton>	
+			</div>
+		</h:form>	
+
+
+			<ul>				
+			<ui:repeat id="innerloop2" value="#{c.commentlist}" var="c">					
+			
+				<div class="voteComment">				
+					<h:commandButton value="+">
+						<f:ajax event="click" listener="#{c.increment()}" render="uccount" />
+					</h:commandButton><br/>
+					<h:outputText id="uccount" value="#{c.count}"/><br/>
+					<h:commandButton value="-">
+						<f:ajax event="click" listener="#{c.decrement()}" render="uccount" />
+					</h:commandButton>				
+				</div>	
+					
+				<div class="showComment">
+					<h:outputText value="Subcomment: "/>
+					<h:outputText value="#{c.comment}"/><br/>
+					<h:outputText value="Submitted on #{c.date} by #{c.user}"/><br/>
+					<h:commandLink>					
+					<h:outputText value="#{c.commentcount} subcomments"/>
+					<f:ajax event="click" listener="#{c.changeShowcomments}" render="@all"></f:ajax>
+					</h:commandLink>		
+				</div>
+
+						
+			</ui:repeat>
+			</ul>
+
+</body>
+</html>

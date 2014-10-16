@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="US-ASCII" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "htth://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:k="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII" />
+<title>Insert title here</title>
+</head>
+<body>
+	<ui:composition>
+	<h:panelGroup id="header" layout="block" class="header">
+		<div class="headerTitle">
+			Reddit Clone
+		</div>
+		<h:form id="login">
+		<h:panelGroup layout="block" class="submitButton" rendered="#{loginBean.loggedIn}">
+			<h:commandButton value="Submit comment">
+				<f:ajax event="click" listener="#{redditBean.changeSubmitLink}" render=":submitlink" />
+			</h:commandButton>
+		</h:panelGroup>
+		<h:panelGroup layout="block" class="loginForm" rendered="#{not loginBean.loggedIn}">
+			<h:inputText value="#{loginBean.username}" k:placeholder="Username"></h:inputText>
+			<h:inputSecret value="#{loginBean.password}" k:placeholder="Password"></h:inputSecret>
+			<h:commandButton value="Login" style="width: 90px">
+				<f:ajax event="click" execute="@form" listener="#{loginBean.doLogin}" render="@form"/>
+			</h:commandButton>
+			
+			<h:commandButton value="Register" action="#{redditBean.doShowRegister()}" style="width: 90px">
+				
+			</h:commandButton>
+		</h:panelGroup>
+		<h:panelGroup layout="block" class="loggedInfo" rendered="#{loginBean.loggedIn}">
+			<h:outputText value="Hi #{loginBean.username}" style="color:white"></h:outputText>
+			<h:commandButton value="Logout" style="width: 90px" action="#{loginBean.doLogout()}" />
+		</h:panelGroup>
+		</h:form>
+	</h:panelGroup>
+	</ui:composition>
+</body>
+</html>

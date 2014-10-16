@@ -1,0 +1,117 @@
+@CHARSET "US-ASCII";
+
+div {
+	
+}
+
+.header {
+	background-color: #706C6C;
+	width: 100%;
+}
+
+.headerTitle {
+	width:200px;
+	font-size: 24px;
+	color: #fff;
+	padding-left: 20px;
+	float: left;
+}
+
+.loginForm {
+	text-align: right;
+}
+
+.loginForm input {
+	margin-right: 10px;
+}
+
+.loggedInfo {
+	text-align: right;
+}
+
+.loggedInfo input {
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.register {
+	background-color: #D4D4D4;
+}
+
+.register h1 {
+	font-size: 24px;
+}
+
+.register h2 {
+	font-size: 18px;
+}
+
+.registerTitle {
+	float: left;
+	width: 500px;
+}
+
+.registerForm input {
+	margin-bottom: 5px;
+}
+
+.submitLink {
+	background-color: #D4D4D4;
+}
+
+.submitButton {
+	float: left;
+}
+
+.submitLink h1 {
+	font-size: 18px;
+}
+
+.submitLink h2 {
+	font-size: 18px;
+}
+
+.submitLinkTitle {
+	float: left;
+	width: 500px;
+}
+
+.submitLinkForm input {
+	margin-bottom: 5px;
+	size: 100px;
+}
+
+.link {
+	background-color: #D4D4D4;
+	margin-bottom: 40px;
+}
+
+.voteLink {
+	float: left;
+	margin-bottom: 50px;
+}
+
+.showLink {
+	
+}
+
+.footer {
+	background-color:#D4D4D4;
+}
+
+.showComments{
+	background-color:#EEEEEE;
+
+}
+.voteComment {
+	float: left;
+}
+
+.showComment {
+	margin-bottom: 40px;
+}
+
+.addComment {
+	background-color:#EEEEEE;
+	margin-bottom: 40px;
+}
