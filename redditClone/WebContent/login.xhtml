@@ -30,6 +30,11 @@
 			</h:commandButton>
 			
 			<h:commandButton value="Register" action="#{redditBean.doShowRegister()}" style="width: 90px">
+			
+			<h:selectOneMenu value="#{language.localeCode}" onchange="submit()"
+			valueChangeListener="#{language.countryLocaleCodeChanged}">
+   			<f:selectItems value="#{language.countriesInMap}" /> 
+   			</h:selectOneMenu>
 				
 			</h:commandButton>
 		</h:panelGroup>
