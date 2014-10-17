@@ -37,9 +37,7 @@ public class LanguageBean {
 		for (Map.Entry<String, Object> entry : countries.entrySet()) {
 
 			if (entry.getValue().toString().equals(newLocaleValue)) {
-
 				FacesContext.getCurrentInstance().getViewRoot().setLocale((Locale) entry.getValue());
-
 			}
 		}
 	}	
