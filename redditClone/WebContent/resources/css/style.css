@@ -6,6 +6,7 @@ div {
 
 .header {
 	background-color: #706C6C;
+	height: 40px;
 	width: 100%;
 }
 
@@ -105,6 +106,7 @@ div {
 }
 .voteComment {
 	float: left;
+	
 }
 
 .showComment {
@@ -114,4 +116,22 @@ div {
 .addComment {
 	background-color:#EEEEEE;
 	margin-bottom: 40px;
+}
+.imageButtonUp
+{
+	cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border: 0px;
+    background-color: transparent;
+    background-image:url(#{resource['images/up.png']});
+}
+.imageButtonDown
+{
+	cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border: 0px;
+    background-color: transparent;
+    background-image:url(#{resource['images/down.png']});
 }

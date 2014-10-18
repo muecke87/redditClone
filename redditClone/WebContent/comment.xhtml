@@ -29,11 +29,11 @@
 			<ui:repeat id="innerloop" value="#{l.commentlist}" var="c">					
 			
 				<div class="voteComment">				
-					<h:commandButton value="+">
+					<h:commandButton styleClass="imageButtonUp">
 						<f:ajax event="click" listener="#{c.increment()}" render="ccount" />
 					</h:commandButton><br/>
 					<h:outputText id="ccount" value="#{c.count}"/><br/>
-					<h:commandButton value="-">
+					<h:commandButton styleClass="imageButtonDown">
 						<f:ajax event="click" listener="#{c.decrement()}" render="ccount" />
 					</h:commandButton>				
 				</div>	
@@ -42,6 +42,7 @@
 					<h:outputText value="Comment: "/>
 					<h:outputText value="#{c.comment}"/><br/>
 					<h:outputText value="Submitted on #{c.date} by #{c.user}"/><br/>
+					<br></br>
 					<h:commandLink>					
 					<h:outputText value="#{c.commentcount} subcomments"/>
 					<f:ajax event="click" listener="#{c.changeShowcomments}" render=":outerloop:showcom:innerloop:subcomments"></f:ajax>

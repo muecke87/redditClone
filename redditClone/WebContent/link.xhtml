@@ -3,18 +3,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:k="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui"
 	xmlns:f="http://java.sun.com/jsf/core">
 <body>
 
 			<div class="link">
 			<div class="voteLink">
 				<h:form>
-				<h:commandButton value="+">
+				<h:commandButton styleClass="imageButtonUp">
 					<f:ajax event="click" listener="#{l.increment()}" render="lcount" />
 				</h:commandButton><br/>
 				<h:outputText id="lcount" value="#{l.count}"/><br/>
-				<h:commandButton value="-">
+				<h:commandButton styleClass="imageButtonDown">
 					<f:ajax event="click" listener="#{l.decrement()}" render="lcount" />
 				</h:commandButton>
 				</h:form>
