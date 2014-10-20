@@ -42,7 +42,7 @@
 				
 		</h:panelGroup>
 		<h:panelGroup layout="block" class="loggedInfo" rendered="#{loginBean.loggedIn}">
-			<h:outputText value="Hi #{loginBean.username}" style="color:white"></h:outputText>
+			<h:outputText value="Hi #{loginBean.username}&nbsp;&nbsp;&nbsp;" style="color:white"></h:outputText>
 			<p:commandButton value="Logout" action="#{loginBean.doLogout()}" ajax="false">
 			</p:commandButton>
 		</h:panelGroup>
