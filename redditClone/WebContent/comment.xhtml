@@ -17,9 +17,10 @@
 			<div class="addComment">
 				<h:outputText value="#{l.commentcount} comments"></h:outputText><br/>
 				<h:inputTextarea id="comment" value="#{commentBean.comment}" k:placeholder="hey #{loginBean.username} write a comment here" style="width: 700px"></h:inputTextarea><br/>
-				<h:commandButton value="post comment" style="width: 120px" >
-					<f:ajax event="click" execute="comment" listener="#{redditBean.addComment(l,commentBean.comment,loginBean.username)}" render=":outerloop:comments"></f:ajax>	
-				</h:commandButton>	
+				<p:commandButton value="post comment" 
+				actionListener="#{redditBean.addComment(l,commentBean.comment,loginBean.username)}" 
+				update=":outerloop:comments">
+				</p:commandButton>	
 			</div>
 		</h:form>				
 			
@@ -32,7 +33,7 @@
 					<h:commandButton styleClass="imageButtonUp">
 						<f:ajax event="click" listener="#{c.increment()}" render="ccount" />
 					</h:commandButton><br/>
-					<h:outputText id="ccount" value="#{c.count}"/><br/>
+					<h:outputText id="ccount" value="&nbsp;#{c.count}"/><br/>
 					<h:commandButton styleClass="imageButtonDown">
 						<f:ajax event="click" listener="#{c.decrement()}" render="ccount" />
 					</h:commandButton>				
@@ -43,17 +44,10 @@
 					<h:outputText value="#{c.comment}"/><br/>
 					<h:outputText value="Submitted on #{c.date} by #{c.user}"/><br/>
 					<br></br>
-					<h:commandLink>					
-					<h:outputText value="#{c.commentcount} subcomments"/>
-					<f:ajax event="click" listener="#{c.changeShowcomments}" render=":outerloop:showcom:innerloop:subcomments"></f:ajax>
-					</h:commandLink>		
+							
 				</div>	
 				
-				<h:panelGroup layout="block" id="subcomments">
-				<h:panelGroup layout="block" id="ssubcomments" rendered="#{c.showcomments}">
-				<ui:include src="./subcomment.xhtml" />
-				</h:panelGroup>
-				</h:panelGroup>
+				
 						
 			</ui:repeat>
 			</ul>

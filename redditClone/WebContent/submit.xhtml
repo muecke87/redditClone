@@ -13,19 +13,22 @@
 	<div class="showSubmitLink">
 		<div class="submitLink">
 		<div class="submitLinkTitle">
-			<h1>Sumit a new Link</h1>
+			<h1>Submit a new Link</h1>
 			<h2>The community is waiting for it!</h2>
 		</div>
 		<div class="submitLinkForm">
 			<h:form>
 				<h:inputText value="#{linkBean.title}"  p:placeholder="Title" size="60" maxlength="100"></h:inputText><br/>
 				<h:inputText value="#{linkBean.url}" p:placeholder="URL" size="60" maxlength="100"></h:inputText>	<br/>		
-				<h:commandButton value="Submit new Link" action="#{redditBean.addLink(linkBean.title,linkBean.url,loginBean.username)}">
-				</h:commandButton>
+				<p:commandButton value="Submit new Link" 
+					action="#{redditBean.addLink(linkBean.title,linkBean.url,loginBean.username)}" 	
+					ajax="false">
+				</p:commandButton>
 			</h:form>
 			<h:commandButton value="cancel">
 				<f:ajax event="click" listener="#{redditBean.changeSubmitLink}" render=":submitlink" />
 			</h:commandButton>
+			
 		</div>
 	</div>
 	</div>

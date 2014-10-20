@@ -5,7 +5,7 @@ div {
 }
 
 .header {
-	background-color: #706C6C;
+	background-color: #42a7e3;
 	height: 40px;
 	width: 100%;
 }
@@ -57,7 +57,7 @@ div {
 }
 
 .submitLink {
-	background-color: #D4D4D4;
+	background-color: #cab798;
 }
 
 .submitButton {
@@ -83,8 +83,10 @@ div {
 }
 
 .link {
-	background-color: #D4D4D4;
+	background-color: #dddfa0;
 	margin-bottom: 40px;
+	border-color: #fff268;
+	border: 10px;
 }
 
 .voteLink {
@@ -97,7 +99,8 @@ div {
 }
 
 .footer {
-	background-color:#D4D4D4;
+	background-color:#42a7e3;
+	
 }
 
 .showComments{
@@ -135,3 +138,4 @@ div {
     background-color: transparent;
     background-image:url(#{resource['images/down.png']});
 }
+

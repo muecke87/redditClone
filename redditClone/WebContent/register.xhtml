@@ -35,12 +35,11 @@
 						<h:inputSecret id="confirm" binding="#{confirm}" required="true"
 							p:placeholder="#{lbl.repeatPassword}"></h:inputSecret>
 						<br />
-						<h:commandButton value="#{lbl.registerButton}" action="#{loginBean.register()}" />
+						<p:commandButton value="#{lbl.registerButton}" actionListener="#{loginBean.register()}" ajax="false">
+						</p:commandButton>
 						
-						<h:commandButton value="#{lbl.closeButton}">
-							<f:ajax event="click" listener="#{redditBean.hideRegister()}"
-								render="@form :header :register" />
-						</h:commandButton>
+						<p:commandButton value="#{lbl.closeButton}" actionListener="#{redditBean.hideRegister()}" update="@form :header :register">
+						</p:commandButton>
 					</h:form>
 				</div>
 
