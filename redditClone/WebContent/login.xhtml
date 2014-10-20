@@ -20,7 +20,7 @@
 		
 		
 		<h:panelGroup layout="block" class="submitButton" rendered="#{loginBean.loggedIn}">
-			<p:commandButton value="Submit a link" onclick="PF('dlg1').show();" ajax="true">
+			<p:commandButton value="Submit a link" onclick="PF('dlg1').show();" ajax="true" onmouseup="#{linkBean.clearInput()}">
 			</p:commandButton>
 			
 
@@ -55,8 +55,9 @@
 				<h:inputText value="#{linkBean.url}" p:placeholder="URL" size="60" maxlength="100"></h:inputText>	<br/>		
 				<p:commandButton value="Submit new Link" 
 					action="#{redditBean.addLink(linkBean.title,linkBean.url,loginBean.username)}" 	
-					ajax="false">
-				</p:commandButton>
+					ajax="false"
+					update="@form">
+				</p:commandButton >
 				</h:form>
 				
 		</p:dialog>

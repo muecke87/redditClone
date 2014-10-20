@@ -33,6 +33,11 @@ public class LinkBean {
 		if(showcomments)showcomments=false;
 		else showcomments=true;
 	}
+	public void clearInput(){
+		this.title = "";
+		this.url = "";
+	}
+	
 	
 
 }
