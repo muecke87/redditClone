@@ -18,7 +18,11 @@ public class LinkBean {
 	}
 	
 	public void setUrl(String url) {
-		this.url = url;
+		if(!url.contains("http://")) {
+			this.url = "http://" + url;
+		}else {
+			this.url = url;
+		}
 	}
 	
 	public boolean getShowcomments() {
@@ -29,5 +33,6 @@ public class LinkBean {
 		if(showcomments)showcomments=false;
 		else showcomments=true;
 	}
+	
 
 }

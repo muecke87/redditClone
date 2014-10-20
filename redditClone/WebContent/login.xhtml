@@ -49,7 +49,9 @@
 		</h:form>
 		<p:dialog header="Submit a link" widgetVar="dlg1" minHeight="40">
     			<h:form>
-				<h:inputText value="#{linkBean.title}"  p:placeholder="Title" size="60" maxlength="100"></h:inputText><br/>
+    			<h:outputLabel value="Title  " />
+    			<h:inputText value="#{linkBean.title}" p:placeholder="Title" size="60" maxlength="100"></h:inputText><br/>
+    			<h:outputLabel value="URL  " />				
 				<h:inputText value="#{linkBean.url}" p:placeholder="URL" size="60" maxlength="100"></h:inputText>	<br/>		
 				<p:commandButton value="Submit new Link" 
 					action="#{redditBean.addLink(linkBean.title,linkBean.url,loginBean.username)}" 	

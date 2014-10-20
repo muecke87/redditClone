@@ -26,7 +26,10 @@
 				<h:outputText value="Title: "/>
 				<h:outputText value="#{l.title}"/><br/>
 				<h:outputText value="URL: "/>
-				<h:outputText value="#{l.url}"/><br/>
+				<h:outputLink value="#{l.url}" target="_new">
+					<h:outputText value="#{l.url}">
+					</h:outputText>
+				</h:outputLink><br/>
 				<h:outputText value="Submitted on #{l.date} by #{l.user}"/><br/>
 				<h:commandLink>					
 					<h:outputText value="#{l.commentcount} comments"/>

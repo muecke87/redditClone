@@ -23,7 +23,7 @@ public class RedditBean {
 		users.add(new User("muecke", "123"));
 		users.add(new User("sirLoaf" , "123"));
 		
-		Link one = new Link("watch baseball", "www.mlb.tv", "muecke");
+		Link one = new Link("watch baseball", "http://www.mlb.tv", "muecke");
 		Link two = new Link("businesscat is funny", "http://www.businesscat.happyjar.com", "sirLoaf");
 		Link three = new Link("all you can eat", "http://www.a-discretion.ch/", "sirLoaf");
 		Link four = new Link("learn cpp", "http://www.cplusplus.com/doc/tutorial/", "muecke");
