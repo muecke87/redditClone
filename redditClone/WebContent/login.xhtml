@@ -26,10 +26,10 @@
 
 		</h:panelGroup>
 		<h:panelGroup layout="block" class="loginForm" rendered="#{not loginBean.loggedIn}">
-			<h:inputText value="#{loginBean.username}" k:placeholder="Username"></h:inputText>
-			<h:inputSecret value="#{loginBean.password}" k:placeholder="Password"></h:inputSecret>
+			<p:inputText value="#{loginBean.username}" k:placeholder="Username"></p:inputText>
+			<p:password value="#{loginBean.password}" k:placeholder="Password"></p:password>
 			<p:commandButton value="Login" style="width: 90px" actionListener="#{loginBean.doLogin}" 
-			update="@form" ajax="true">
+				update="@form" ajax="true">
 			</p:commandButton>
 			
 			<p:commandButton value="Register" actionListener="#{redditBean.doShowRegister()}" ajax="false">

@@ -6,8 +6,10 @@ div {
 
 .header {
 	background-color: #42a7e3;
-	height: 40px;
+	height: 100px;
 	width: 100%;
+	background-repeat: no-repeat;
+	background-image: url(#{resource['images/clone.png']});
 }
 
 .headerTitle {
@@ -16,6 +18,7 @@ div {
 	color: #fff;
 	padding-left: 20px;
 	float: left;
+	
 }
 
 .loginForm {
@@ -28,6 +31,7 @@ div {
 
 .loggedInfo {
 	text-align: right;
+	
 }
 
 .loggedInfo input {
@@ -104,7 +108,7 @@ div {
 }
 
 .showComments{
-	background-color:#EEEEEE;
+	background-color:#dddfa0;
 
 }
 .voteComment {
@@ -117,7 +121,7 @@ div {
 }
 
 .addComment {
-	background-color:#EEEEEE;
+	background-color:#dddfa0;
 	margin-bottom: 40px;
 }
 .imageButtonUp
