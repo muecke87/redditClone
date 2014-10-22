@@ -28,7 +28,7 @@
 			<p:inputText value="#{loginBean.username}" p:placeholder="Username"></p:inputText>
 			<p:password value="#{loginBean.password}" p:placeholder="Password"></p:password>
 			<p:commandButton value="Login" style="width: 90px" actionListener="#{loginBean.doLogin}" 
-				update="@form" ajax="true">
+				update="@all" ajax="true">
 			</p:commandButton>
 			
 			<p:commandButton value="Register" actionListener="#{redditBean.doShowRegister()}" ajax="false">

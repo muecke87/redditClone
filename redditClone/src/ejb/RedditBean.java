@@ -37,6 +37,7 @@ public class RedditBean {
 		linklist.add(two);
 		linklist.add(three);
 		linklist.add(four);
+		
 	}
 	
 	public boolean getSubmitlink() {
@@ -88,4 +89,5 @@ public class RedditBean {
 	public void addUser(User newUser) {
 		users.add(newUser);
 	}
+	
 }

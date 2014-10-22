@@ -8,17 +8,17 @@
 <body>
 
 			<div class="link">
-			<div class="voteLink">
-				<h:form>
-				<h:commandButton styleClass="imageButtonUp">
-					<f:ajax event="click" listener="#{l.increment()}" render="lcount" />
-				</h:commandButton><br/>
-				<h:outputText id="lcount" value="&nbsp;#{l.count}"/><br/>
-				<h:commandButton styleClass="imageButtonDown">
-					<f:ajax event="click" listener="#{l.decrement()}" render="lcount" />
-				</h:commandButton>
-				</h:form>
-			</div>	
+				<div class="voteLink" >
+					<h:form>
+					<h:commandButton styleClass="imageButtonUp" rendered="#{loginBean.loggedIn}" >
+						<f:ajax event="click" listener="#{l.increment()}" render="lcount" />
+					</h:commandButton><br/>
+					<h:outputText styleClass="counterNumber" id="lcount" value="&nbsp;#{l.count}"/><br/>
+					<h:commandButton styleClass="imageButtonDown" rendered="#{loginBean.loggedIn}">
+						<f:ajax event="click" listener="#{l.decrement()}" render="lcount" />
+					</h:commandButton>
+					</h:form>
+				</div>	
 			
 			<div class="showLink">
 				<h:form>

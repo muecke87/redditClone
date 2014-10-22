@@ -31,11 +31,11 @@
 			<ul>				
 			<ui:repeat id="innerloop" value="#{l.commentlist}" var="c">					
 				<div class="voteComment">				
-					<h:commandButton styleClass="imageButtonUp">
+					<h:commandButton styleClass="imageButtonUp" rendered="#{loginBean.loggedIn}">
 						<f:ajax event="click" listener="#{c.increment()}" render="ccount" />
 					</h:commandButton><br/>
-					<h:outputText id="ccount" value="&nbsp;#{c.count}"/><br/>
-					<h:commandButton styleClass="imageButtonDown">
+					<h:outputText id="ccount" styleClass="counterNumber" value="&nbsp;#{c.count}"/><br/>
+					<h:commandButton styleClass="imageButtonDown" rendered="#{loginBean.loggedIn}">
 						<f:ajax event="click" listener="#{c.decrement()}" render="ccount" />
 					</h:commandButton>				
 				</div>	
