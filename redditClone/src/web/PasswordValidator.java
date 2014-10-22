@@ -18,21 +18,10 @@ public class PasswordValidator implements Validator {
         UIInput confirmComponent = (UIInput) component.getAttributes().get("confirm");
         String confirm = (String) confirmComponent.getSubmittedValue();
 
-        if (password == null || password.isEmpty() || confirm == null || confirm.isEmpty()) {
-            return; // Let required="true" do its job.
-        }
-
         if (!password.equals(confirm)) {
             confirmComponent.setValid(false);
-            System.out.println("PasswordValidator");
-     
-            //throw new ValidatorException(new FacesMessage(FacesMessage.SEVERITY_ERROR, null, "password not equal"));
-//            context.addMessage(null, new FacesMessage("Passwords are not equal."));
-//            context.validationFailed();
-//            ((UIInput) component).setValid(false);
-//            confirmComponent.setValid(false);
-//            return;
-            throw new ValidatorException(new FacesMessage("Passwords are not equal."));
+         
+           throw new ValidatorException(new FacesMessage("Passwords are not equal."));
         }
 
 	}

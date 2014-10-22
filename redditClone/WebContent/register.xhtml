@@ -22,19 +22,24 @@
 				<div class="registerForm" id="registerForm">
 					<h:form>
 						<h:inputText id="username" value="#{loginBean.username}"
-							binding="#{username}" required="true" p:placeholder="#{lbl.username}">
-							<f:validator validatorId="usernameValidator" />
+							binding="#{username}" required="true" p:placeholder="#{lbl.username}" requiredMessage="Please enter an username">
+								<f:validator validatorId="usernameValidator" /> 
 						</h:inputText>
+						<h:message for="username" style="color: red;" />	
+						
 						<br />
 						<h:inputSecret id="password" value="#{loginBean.password}"
-							required="true" p:placeholder="#{lbl.password}">
+							required="true" p:placeholder="#{lbl.password}" requiredMessage="Please enter a password">
 							<f:validator validatorId="passwordValidator" />
 							<f:attribute name="confirm" value="#{confirm}" />
 						</h:inputSecret>
+						<h:message for="password" style="color: red;" />	
 						<br />
 						<h:inputSecret id="confirm" binding="#{confirm}" required="true"
-							p:placeholder="#{lbl.repeatPassword}"></h:inputSecret>
+							p:placeholder="#{lbl.repeatPassword}" requiredMessage="Please confirm password"/>
+								<h:message for="confirm" style="color: red;" />	
 						<br />
+					
 						<p:commandButton value="#{lbl.registerButton}" actionListener="#{loginBean.register()}" ajax="false">
 						</p:commandButton>
 						

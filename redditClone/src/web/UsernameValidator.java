@@ -19,11 +19,10 @@ public class UsernameValidator implements Validator {
 		List<User> users = redditBean.getUsers();
 		
 		String username = (String)value;
-		
+				
 		for (User u : users) {
 			if (u.getUsername().equals(username)) {
 				//nameComponent.setValid(false); // So that it's marked invalid.
-				System.out.println("UserValidator");
 				throw new ValidatorException(new FacesMessage("Username already exists."));
 			}
 		}
