@@ -10,17 +10,20 @@
 <body>
 
 	<h:panelGroup layout="block" id="comments">
-	<h:panelGroup layout="block" id="scomments" rendered="#{l.showcomments}">
+	<h:panelGroup layout="block" id="commentsLink" rendered="#{l.showcomments}">
 				
 		<h:form id="addcomment" rendered="#{loginBean.loggedIn}">
 			<div class="addComment">
 				<h:outputText value="#{l.commentcount} comments"></h:outputText><br/>
 				<h:inputTextarea id="comment" value="#{commentBean.comment}" k:placeholder="hey #{loginBean.username} write a comment here" style="width: 700px"></h:inputTextarea><br/>
+				<h:panelGroup>
 				<p:commandButton value="post comment" 
 					actionListener="#{redditBean.addComment(l,commentBean.comment,loginBean.username)}" 
 					update=":outerloop:comments"
-					onclick="#{commentBean.reset()}">
+					onclick="#{commentBean.reset()}"
+					rendered="true">
 				</p:commandButton>	
+				</h:panelGroup>
 			</div>
 		</h:form>				
 			
@@ -28,7 +31,6 @@
 		<div class="showComments">
 			<ul>				
 			<ui:repeat id="innerloop" value="#{l.commentlist}" var="c">					
-			
 				<div class="voteComment">				
 					<h:commandButton styleClass="imageButtonUp">
 						<f:ajax event="click" listener="#{c.increment()}" render="ccount" />
@@ -48,7 +50,6 @@
 				</div>	
 				
 				
-						
 			</ui:repeat>
 			</ul>
 			
