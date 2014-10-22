@@ -3,7 +3,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:k="http://xmlns.jcp.org/jsf/passthrough"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
@@ -26,8 +25,8 @@
 
 		</h:panelGroup>
 		<h:panelGroup layout="block" class="loginForm" rendered="#{not loginBean.loggedIn}">
-			<p:inputText value="#{loginBean.username}" k:placeholder="Username"></p:inputText>
-			<p:password value="#{loginBean.password}" k:placeholder="Password"></p:password>
+			<p:inputText value="#{loginBean.username}" p:placeholder="Username"></p:inputText>
+			<p:password value="#{loginBean.password}" p:placeholder="Password"></p:password>
 			<p:commandButton value="Login" style="width: 90px" actionListener="#{loginBean.doLogin}" 
 				update="@form" ajax="true">
 			</p:commandButton>

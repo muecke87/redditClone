@@ -3,7 +3,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:k="http://xmlns.jcp.org/jsf/passthrough"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:f="http://java.sun.com/jsf/core">
 	
@@ -15,7 +14,7 @@
 		<h:form id="addcomment" rendered="#{loginBean.loggedIn}">
 			<div class="addComment">
 				<h:outputText value="#{l.commentcount} comments"></h:outputText><br/>
-				<h:inputTextarea id="comment" value="#{commentBean.comment}" k:placeholder="hey #{loginBean.username} write a comment here" style="width: 700px"></h:inputTextarea><br/>
+				<h:inputTextarea id="comment" value="#{commentBean.comment}" p:placeholder="hey #{loginBean.username} write a comment here" style="width: 700px"></h:inputTextarea><br/>
 				<h:panelGroup>
 				<p:commandButton value="post comment" 
 					actionListener="#{redditBean.addComment(l,commentBean.comment,loginBean.username)}" 
